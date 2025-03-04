@@ -1,4 +1,4 @@
-# Traversability Mapping
+# Traversability Mapping with Semantic and Geometric Fusion
 
 This is the code for creating traversability maps from fusing semantic and geometric information! The project originally uses image and point cloud rosbag data to calculate traversability costs conditioned on semantics and geometry. 
 
@@ -21,7 +21,7 @@ If the executables are built somewhere else, make sure to change the filepaths i
 - [Traversability Mapping](#traversability-mapping)
 
 ### Semantic Processing
-The `semantic_detection` directory contains the code used for training and testing different feature extraction backbones. `demo_inference.py` is used to generate the required semantic bitmaps from the output masks of the chosen network model.
+Given an object detection model, `demo_inference.py` runs inference on the rosbag images and generates the required semantic bitmaps from the output masks of the model.
 
 ### Point Cloud Accumulation
 After the Hesai lidar point clouds are extracted from the rosbags and semantic masks from the rgb images are converted into bitmaps, the original lidar point clouds are converted into custom point clouds with the point type in `pointXYZCustom.hpp`. Then point clouds from every frame and consecutive rosbags are accumulated to form a semantically labeled global map in `accumulate_pointcloud.cpp`. This file also contains options for point cloud visualization and for creating point clouds for evaluation, all which can be set in `config.yaml`

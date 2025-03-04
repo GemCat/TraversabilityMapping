@@ -1,6 +1,6 @@
 # Traversability Mapping with Semantic and Geometric Fusion
 
-This is the code for creating traversability maps from fusing semantic and geometric information! The project originally uses image and point cloud rosbag data to calculate traversability costs conditioned on semantics and geometry. 
+This is the code for creating traversability maps from fusing semantic and geometric information! The project uses image and point cloud rosbag data to calculate traversability costs conditioned on semantics and geometry. It was conducted as a semester project in 2023. 
 
 ## Running the pipeline
 The full pipeline from input images & point clouds to output traversability map can be run using `run_pipeline.sh`. Before executing the pipeline, ensure that all necessary data are correctly named and saved and that the correct filepaths for accessing and saving data/outputs are set in `accumulate_pointcloud.cpp` and `config.yaml`. The required data inputs are point clouds, rgb images, and any necessary transformations between camera, lidar, and world frames. If the detection model under the `semantic_detection` library from this project is to be used for generating semantics, then model weights must be loaded and the filepaths within the config files should be changed to match your local machine. 

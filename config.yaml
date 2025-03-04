@@ -1,0 +1,60 @@
+accumulate:
+  base: "trail"
+  datasets:
+    - "trail"
+    - "trail1"
+    - "trail2"
+    - "trail_val"
+
+  # datasets:
+  #   - "road0"
+  #   - "road1"
+  #   - "road2"
+  #   - "road_val"
+  # datasets:
+  #   - "trail2"
+
+  val_dataset: "trail2"
+  num_clouds: 
+    - 383
+    - 385
+    - 402
+    - 366
+
+  # num_clouds: 
+  # - 391
+  # - 396
+  # - 417
+  # - 368
+  # num_clouds:
+  #   - 402
+
+  vis_only: true
+  filter: false
+  create_eval: true
+  vis_cloud_dir: "/home/rsl/semantic_pointclouds/trail/map_fusion.pcd"
+  cloud_dir: 
+  save_cloud_dir: "/home/rsl/semantic_pointclouds/trail/eval/map_eval2.pcd"
+
+geometric:
+  cloud_dir: "/home/rsl/semantic_pointclouds/trail/eval/map_eval2.pcd"
+  save_dir: "/home/rsl/semantic_pointclouds/trail/eval/map_eval2_geo.pcd"
+
+fusion:
+  cloud_dir: "/home/rsl/semantic_pointclouds/trail/map_out.pcd"
+  save_cloud_dir: "/home/rsl/semantic_pointclouds/trail/map_fusion.pcd"
+  vis_kmeans: false
+
+map:
+  cloud_dir: "/home/rsl/semantic_pointclouds/road/map_fusion.pcd"
+  save_dir: "/home/rsl/semantic_pointclouds/road/elevation_map_unnormalized.npy"
+  save_map: false
+  usingGeoOnly: false
+  normalize: false
+
+evaluate:
+  cloud_dir: "/home/rsl/semantic_pointclouds/road/eval/map_eval_fusion.pcd"
+  gt_dir: "/home/rsl/semantic_pointclouds/road/eval/map_eval_GT.pcd"
+  geo_dir: "/home/rsl/semantic_pointclouds/road/eval/map_eval_geo.pcd"
+
+
